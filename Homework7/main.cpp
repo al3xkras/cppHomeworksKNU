@@ -99,6 +99,7 @@ void task7_9_v(){
 
     printf("Max value: %lf\n",arrayMax(numbers,num_count));
 
+    delete(&numbers);
 }
 
 int main(){
