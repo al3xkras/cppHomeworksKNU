@@ -33,19 +33,21 @@ void task5_10_d(){
 
     printf("S_n = %lf\n",_sum);
 }
-/*
-double task5_11_a_a_k(int k){
+
+double task5_11_a_rec(bool calculate_a, int k){
+
+    if (!calculate_a){
+        if (k<3){
+            return k%2;
+        } else {
+            return 2.0*task5_11_a_rec(false,k-1)+task5_11_a_rec(true,k-1);
+        } 
+    }
+
     if (k<3){
         return 3-k;
     }
-    return task5_11_a_a_k(k-1)/(k+1) + task5_11_a_a_k(k-2) + task5_11_a_b_k(k);
-}
-
-double task5_11_a_b_k(int k){
-    if (k<3){
-        return k%2;
-    }
-    return 2.0*task5_11_a_b_k(k-1)+task5_11_a_a_k(k-1);
+    return task5_11_a_rec(true,k-1)/(k+1) + task5_11_a_rec(true,k-2) + task5_11_a_rec(false,k);
 }
 
 void task5_11_a(){
@@ -58,12 +60,12 @@ void task5_11_a(){
     double _sum = 0.0;
 
     for (int k=1; k<=n; k++){
-        _sum+=pow(3,2*k+1)/(task5_11_a_a_k(k)*task5_11_a_b_k(k)+1);
+        _sum+=pow(3,2*k+1)/(task5_11_a_rec(true,k)*task5_11_a_rec(false,k)+1);
     }
 
     printf("\nS_n = %lf\n",_sum);
 }
-*/
+
 
 void task5_15_g(){
     double eps;
@@ -96,8 +98,7 @@ void task5_15_g(){
 int main(){
     //11 Красовський Олександр 5.10д, 5.11а, 5.15г
     task5_10_d();
-    //Помилка в умові
-    //task5_11_a();
+    task5_11_a();
     task5_15_g();
     return 0;
 }
