@@ -17,7 +17,6 @@ void input_matrix(double matrix[matrix_max_size][matrix_max_size], size_t n){
             matrix[i][j]=m_ij;
         }
     }
-
 }
 
 void print_mat(double matrix[matrix_max_size][matrix_max_size], size_t n){
@@ -111,6 +110,8 @@ void task8_8(){
     
     printf("Input n<=%d: ",matrix_max_size);
     scanf("%d",&n);
+
+    if (n>matrix_max_size) return;
 
     input_matrix(matrix,n);
 
