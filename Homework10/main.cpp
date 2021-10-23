@@ -103,7 +103,7 @@ void task10_10(){
     }
 
     printf("Population with minimum density:\n");
-    printf("Population:\n  %.3fm people\n  Country area size: %.3f\n",
+    printf("Population:\n  %.3fm people\n  Country area: %.3f\n",
         minimumDensity.populationInMillions,
         minimumDensity.countryAreaInKm2);
     
