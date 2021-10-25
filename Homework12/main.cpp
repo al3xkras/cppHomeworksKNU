@@ -9,13 +9,13 @@ void task12_06(){
     cout<<"Task 12.06"<<endl;
     std::string numbers;
 
-    cout<<"Input numbers (1-1000), separated by comma: "<<endl;
+    cout<<"Input from 1 to 1000 numbers, separated by comma: "<<endl;
     cin>>numbers;
 
     numbers = numbers.substr(0,numbers.length());
 
     int start_index = 0;
-    int end_index = 1;
+    int end_index = 0;
 
     int number_index = 0;
     double num_array[numbers.length()/2];
@@ -135,7 +135,7 @@ void task12_21(){
 
     f1.close();
 
-    string data (buffer,length);
+    string data (buffer);
     
     Date* dates;
 
