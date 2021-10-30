@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <string>
-#include <locale>
+#include <regex>
 
 using namespace std;
 
@@ -14,10 +14,8 @@ std::string ReplaceAll(std::string str, const std::string& from, const std::stri
     return str;
 }
 
-void task13_18(){
-    cout<<"Task 13.18"<<endl;
-
-    std::locale loc;
+void task13_13(){
+    cout<<"Task 13.13"<<endl;
 
     string _str;
     string substr;
@@ -67,8 +65,8 @@ void task13_18(){
         <<"Word occurs "<<word_count<<" times"<<endl;
 }
 
-void task13_19(){
-    cout<<endl<<"Task 13.19"<<endl;
+void task13_20(){
+    cout<<endl<<"Task 13.20"<<endl;
 
     string nums = "one two three four five four nine three fjfnekrfk eight -1 minus one seven";
 
@@ -92,9 +90,52 @@ void task13_19(){
     cout<<"Edited string: "<<endl<<"  "<<nums<<endl;
 }
 
+void task13_18(){
+    cout<<"Task 13.18"<<endl;
+    
+    std::string pattern("[a-zA-Z]+ings");
+    std::regex rx(pattern);
+
+    std::string _str("mornings ings word   timings    word  evenings");
+
+    cout<<"String: "<<_str<<endl;
+
+    auto words_begin = std::sregex_iterator(_str.begin(), _str.end(), rx);
+    auto words_end = std::sregex_iterator();
+
+    cout<<"Words: "<<endl;
+    for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
+        std::smatch match = *i;                                                 
+        std::string match_str = match.str(); 
+        std::cout << "  " << match_str << endl;
+    }
+}
+
+void task13_19(){
+    cout<<"Task 13.19"<<endl;
+    string latin;
+    cout<<"Input latin letters string: ";
+    cin>>latin;
+
+    char latin_letters[latin.length()];
+    strcpy(latin_letters, latin.c_str());
+
+    for (int i=0; i<latin.length();i++){
+        if (('a'<=latin_letters[i] & 'z'>=latin_letters[i])){
+            latin_letters[i] = 'a'+((latin_letters[i]-'a'+1))%('z'-'a'+1);
+        } else if ('A'<=latin_letters[i] & 'Z'>=latin_letters[i]){
+            latin_letters[i] = 'A'+((latin_letters[i]-'A'+1))%('Z'-'A'+1);
+        }
+    }
+
+    cout<<latin_letters<<endl;
+}
+
 int main(){
     //11 Красовський Олександр 13.18, 13.19
     task13_18();
     task13_19();
+    task13_13();
+    task13_20();
     return 0;
 }
