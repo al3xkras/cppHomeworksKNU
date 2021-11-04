@@ -16,13 +16,17 @@ public:
         this->b=b;
     }
 
+    Line2D() {
+
+    }
+
     Point2D getCenter(){
         return Point2D(a.getX()/2+b.getX()/2,
                        a.getY()/2+b.getY()/2);
     }
 
     double length(){
-        return sqrt(pow(a.getX()-b.getX(),2)+pow(a.getX()-b.getY(),2));
+        return sqrt(pow(a.getX()-b.getX(),2)+pow(a.getY()-b.getY(),2));
     }
 
     Point2D intersection(Line2D other) {
