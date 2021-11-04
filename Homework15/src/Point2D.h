@@ -1,0 +1,9 @@
+#ifndef HOMEWORK15_POINT2D_H
+#define HOMEWORK15_POINT2D_H
+
+class Point2D {
+
+};
+
+
+#endif //HOMEWORK15_POINT2D_H
