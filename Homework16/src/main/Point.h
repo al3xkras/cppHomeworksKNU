@@ -6,16 +6,23 @@
 #define HOMEWORK16_POINT_H
 
 
+#include <ostream>
+
 class Point {
 private:
     double x;
     double y;
 public:
     Point(double x, double y);
+
+    double distanceTo(Point other);
+
     double getX() const;
     double getY() const;
-    void setX(double x);
-    void setY(double y);
+    void setX(double X);
+    void setY(double Y);
+
+    friend std::ostream &operator<<(std::ostream &os, const Point &point);
 };
 
 

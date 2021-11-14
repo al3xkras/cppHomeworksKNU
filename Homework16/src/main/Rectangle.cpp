@@ -12,11 +12,11 @@ Rectangle::Rectangle(Point leftBottom, Point rightTop){
     this->y2=rightTop.getY();
 }
 
-EdgesLength Rectangle::getEdgesLength() const{
+RectangleEdgesLength Rectangle::getEdgesLength() const{
     double edge1 = std::abs(x1-x2);
     double edge2 = std::abs(y1-y2);
 
-    EdgesLength length = EdgesLength(std::min(edge1,edge2),std::max(edge1,edge2));
+    RectangleEdgesLength length = RectangleEdgesLength(std::min(edge1, edge2), std::max(edge1, edge2));
 
     return length;
 }
@@ -26,12 +26,10 @@ double Rectangle::area() const {
 }
 
 double Rectangle::perimeter() const{
-    EdgesLength edgesLength = getEdgesLength();
+    RectangleEdgesLength edgesLength = getEdgesLength();
 
     return 2*(edgesLength.getShortEdge()+edgesLength.getLongEdge());
 }
 
-Rectangle::~Rectangle() {
-    delete(this);
-}
+Rectangle::~Rectangle() = default;
 

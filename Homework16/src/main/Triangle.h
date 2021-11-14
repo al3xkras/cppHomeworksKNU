@@ -5,15 +5,37 @@
 #ifndef HOMEWORK16_TRIANGLE_H
 #define HOMEWORK16_TRIANGLE_H
 
+#include <ostream>
+#include "Point.h"
+#include "Figure.h"
 
-class Triangle {
+struct TriangleEdgesLength{
 private:
-    double x1,y1,
-            x2,y2,
-            x3,y3;
+    double AB;
+    double BC;
+    double AC;
 public:
-    Triangle(double x1, double y1, double x2, double y2, double x3, double y3);
+    TriangleEdgesLength(double ab, double bc, double ac);
 
+    double getAb() const;
+    double getBc() const;
+    double getAc() const;
+
+    friend std::ostream &operator<<(std::ostream &os, const TriangleEdgesLength &length);
+};
+
+class Triangle : public  Figure{
+private:
+    Point* points;
+public:
+    Triangle(const Point &a, const Point &b, const Point &c);
+    virtual ~Triangle();
+
+    TriangleEdgesLength getEdgesLength();
+    double area();
+    double perimeter();
+
+    friend std::ostream &operator<<(std::ostream &os, const Triangle &triangle);
 };
 
 

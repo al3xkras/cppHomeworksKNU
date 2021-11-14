@@ -9,12 +9,12 @@
 #include "Figure.h"
 #include "iostream"
 
-struct EdgesLength{
+struct RectangleEdgesLength{
 private:
     double shortEdge;
     double longEdge;
 public:
-    EdgesLength(const double shortEdge, const double longEdge){
+    RectangleEdgesLength(const double shortEdge, const double longEdge){
         this->shortEdge=shortEdge;
         this->longEdge=longEdge;
     };
@@ -27,7 +27,7 @@ public:
         return longEdge;
     }
 
-    friend std::ostream &operator<<(std::ostream &os, const EdgesLength &length) {
+    friend std::ostream &operator<<(std::ostream &os, const RectangleEdgesLength &length) {
         os << "shortEdge: " << length.shortEdge << " longEdge: " << length.longEdge;
         return os;
     }
@@ -41,7 +41,7 @@ private:
 public:
     Rectangle(Point leftBottom, Point rightTop);
 
-    EdgesLength getEdgesLength() const;
+    RectangleEdgesLength getEdgesLength() const;
     double area() const;
     double perimeter() const;
     virtual ~Rectangle();
