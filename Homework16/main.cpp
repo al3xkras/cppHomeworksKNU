@@ -6,6 +6,7 @@
 #include "src/main/Figures/Triangle.h"
 #include "src/main/FigureComponents/Line.h"
 #include "src/main/Figures/Polygon.h"
+#include "src/main/Figures/Pentagon.h"
 
 void task16_08(){
     Rectangle rectangle(Point(0, -1),
@@ -36,9 +37,10 @@ void task16_08(){
             Point(1,3)
     };
 
-    Polygon polygon(points,5);
+    Pentagon polygon(points,5);
 
     std::cout<<std::boolalpha<<polygon.isConvex()<<std::endl;
+    std::cout<<polygon<<std::endl;
 
 }
 

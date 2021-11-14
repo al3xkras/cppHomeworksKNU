@@ -6,6 +6,7 @@
 #define HOMEWORK16_POLYGON_H
 
 
+#include <ostream>
 #include "../FigureComponents/Figure.h"
 #include "../FigureComponents/Point.h"
 
@@ -15,7 +16,10 @@ private:
     Point* points;
 public:
     Polygon(Point* points, size_t points_size);
-    bool isConvex();
+
+    virtual bool isConvex();
+
+    friend std::ostream &operator<<(std::ostream &os, const Polygon &polygon);
 
     virtual ~Polygon();
 };

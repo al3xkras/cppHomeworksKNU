@@ -45,3 +45,11 @@ bool Polygon::isConvex() {
 Polygon::~Polygon() {
     delete[](points);
 }
+
+std::ostream &operator<<(std::ostream &os, const Polygon &polygon) {
+    os<<"Polygon: ";
+    for (int i=0; i<polygon.points_size; i++){
+        os<<'('<<polygon.points[i]<<") ";
+    }
+    return os;
+}
