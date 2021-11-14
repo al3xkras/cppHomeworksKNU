@@ -14,11 +14,12 @@ private:
     Polygon pentagon = Polygon(nullptr, 0);
 public:
     Pentagon(Point* points, size_t points_size);
+    ~Pentagon() override;
+
     bool isConvex() override;
+    double perimeter() override;
 
     friend std::ostream &operator<<(std::ostream &os, const Pentagon &pentagon);
-
-    virtual ~Pentagon();
 };
 
 

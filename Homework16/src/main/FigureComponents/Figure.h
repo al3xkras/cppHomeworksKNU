@@ -7,7 +7,9 @@
 
 
 class Figure {
-
+public:
+    virtual bool isConvex();
+    virtual double perimeter();
 };
 
 

@@ -3,3 +3,11 @@
 //
 
 #include "Figure.h"
+
+bool Figure::isConvex() {
+    return false;
+}
+
+double Figure::perimeter() {
+    return 0;
+}

@@ -53,3 +53,12 @@ std::ostream &operator<<(std::ostream &os, const Polygon &polygon) {
     }
     return os;
 }
+
+double Polygon::perimeter() {
+    double perimeter = 0;
+    for (int i=0; i<points_size; i++) {
+        int j = (i + 1) % points_size;
+        perimeter += points[i].distanceTo(points[j]);
+    }
+    return perimeter;
+}

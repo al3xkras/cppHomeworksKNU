@@ -35,16 +35,18 @@ public:
 
 class Rectangle: public Figure {
 private:
-    double x1,y1,
-           x2,y2;
+    double x1,y1;
+    double x2,y2;
 
 public:
     Rectangle(Point leftBottom, Point rightTop);
-
-    RectangleEdgesLength getEdgesLength() const;
-    double area() const;
-    double perimeter() const;
     virtual ~Rectangle();
+
+    bool isConvex() override;
+    double perimeter() override;
+
+    RectangleEdgesLength getEdgesLength();
+    double area();
 };
 
 

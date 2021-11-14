@@ -9,11 +9,6 @@
 #include "src/main/Figures/Pentagon.h"
 
 void task16_08(){
-    Rectangle rectangle(Point(0, -1),
-            Point(2, 1));
-
-    Triangle triangle(Point(0,0),Point(0,2),Point(1,1));
-
 
     /*
     std::cout<<rectangle.perimeter()<<std::endl
@@ -37,10 +32,26 @@ void task16_08(){
             Point(1,3)
     };
 
-    Pentagon polygon(points,5);
+    Point points2[7] = {
+            Point(0,0),
+            Point(1,0),
+            Point(2,1),
+            Point(2,2),
+            Point(1,3),
+            Point(0,3),
+            Point(0.5,1.5)
+    };
 
-    std::cout<<std::boolalpha<<polygon.isConvex()<<std::endl;
-    std::cout<<polygon<<std::endl;
+    Rectangle rectangle(Point(0, -1),
+                        Point(2, 1));
+
+    Triangle triangle(Point(0,0),Point(0,2),Point(1,1));
+
+    Pentagon pentagon(points, 5);
+    Polygon polygon(points2,7);
+
+    std::cout << std::boolalpha << pentagon.isConvex() << std::endl;
+    std::cout << pentagon << std::endl;
 
 }
 

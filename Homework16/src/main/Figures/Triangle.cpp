@@ -45,6 +45,13 @@ std::ostream &operator<<(std::ostream &os, const Triangle &triangle) {
     return os;
 }
 
+bool Triangle::isConvex() {
+    if (area()!=0){
+        return true;
+    }
+    return false;
+}
+
 TriangleEdgesLength::TriangleEdgesLength(double ab, double bc, double ac) : AB(ab), BC(bc), AC(ac) {}
 
 double TriangleEdgesLength::getAb() const {

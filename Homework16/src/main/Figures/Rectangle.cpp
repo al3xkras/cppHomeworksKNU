@@ -12,7 +12,7 @@ Rectangle::Rectangle(Point leftBottom, Point rightTop){
     this->y2=rightTop.getY();
 }
 
-RectangleEdgesLength Rectangle::getEdgesLength() const{
+RectangleEdgesLength Rectangle::getEdgesLength() {
     double edge1 = std::abs(x1-x2);
     double edge2 = std::abs(y1-y2);
 
@@ -21,14 +21,21 @@ RectangleEdgesLength Rectangle::getEdgesLength() const{
     return length;
 }
 
-double Rectangle::area() const {
+double Rectangle::area() {
     return std::abs(x1-x2)*std::abs(y1-y2);
 }
 
-double Rectangle::perimeter() const{
+double Rectangle::perimeter(){
     RectangleEdgesLength edgesLength = getEdgesLength();
 
     return 2*(edgesLength.getShortEdge()+edgesLength.getLongEdge());
+}
+
+bool Rectangle::isConvex() {
+    if (area()!=0){
+        return true;
+    }
+    return false;
 }
 
 Rectangle::~Rectangle() = default;

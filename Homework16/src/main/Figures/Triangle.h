@@ -27,13 +27,16 @@ public:
 class Triangle : public  Figure{
 private:
     Point* points;
+
 public:
     Triangle(const Point &a, const Point &b, const Point &c);
     virtual ~Triangle();
 
+    bool isConvex() override;
+    double perimeter() override;
+
     TriangleEdgesLength getEdgesLength();
     double area();
-    double perimeter();
 
     friend std::ostream &operator<<(std::ostream &os, const Triangle &triangle);
 };

@@ -20,3 +20,7 @@ std::ostream &operator<<(std::ostream &os, const Pentagon &pentagon) {
     os << pentagon.pentagon;
     return os;
 }
+
+double Pentagon::perimeter() {
+    return pentagon.perimeter();
+}

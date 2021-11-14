@@ -16,12 +16,12 @@ private:
     Point* points;
 public:
     Polygon(Point* points, size_t points_size);
+    virtual ~Polygon();
 
-    virtual bool isConvex();
+    bool isConvex() override;
+    double perimeter() override;
 
     friend std::ostream &operator<<(std::ostream &os, const Polygon &polygon);
-
-    virtual ~Polygon();
 };
 
 
