@@ -37,6 +37,6 @@ double Point::distanceTo(Point other) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Point &point) {
-    os << "x: " << point.x << " y: " << point.y;
+    os << "x: " << point.getX() << " y: " << point.getY();
     return os;
 }

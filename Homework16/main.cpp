@@ -4,7 +4,6 @@
 #include "src/main/FigureComponents/Figure.h"
 #include "src/main/Figures/Rectangle.h"
 #include "src/main/Figures/Triangle.h"
-#include "src/main/FigureComponents/Line.h"
 #include "src/main/Figures/Polygon.h"
 #include "src/main/Figures/Pentagon.h"
 
@@ -42,17 +41,32 @@ void task16_08(){
             Point(0.5,1.5)
     };
 
-    Rectangle rectangle(Point(0, -1),
+    Rectangle rectangle = Rectangle(Point(0, -1),
                         Point(2, 1));
+    Triangle triangle = Triangle(Point(0,0),Point(0,2),Point(1,1));
+    Pentagon pentagon = Pentagon(points, 5);
+    Polygon polygon = Polygon(points2,7);
 
-    Triangle triangle(Point(0,0),Point(0,2),Point(1,1));
+    Figure *figures[] = {&rectangle,&triangle,&pentagon,&polygon};
 
-    Pentagon pentagon(points, 5);
-    Polygon polygon(points2,7);
+    Figure *minPerimeterFigure = nullptr;
 
-    std::cout << std::boolalpha << pentagon.isConvex() << std::endl;
-    std::cout << pentagon << std::endl;
+    for (auto figure:figures){
+        if (minPerimeterFigure == nullptr){
+            minPerimeterFigure = figure;
+        } else if ((*minPerimeterFigure).perimeter()>(*figure).perimeter()){
+            minPerimeterFigure = figure;
+        }
+        std::cout<<(*figure)<<std::endl;
+        std::cout<<std::boolalpha<<"  Is convex: "<<(*figure).isConvex()<< std::endl
+            <<"   Perimeter: "<<(*figure).perimeter()<<std::endl<<std::endl;
+        delete figure;
+    }
 
+    std::cout<<"Minimum perimeter figure: "<<(*minPerimeterFigure).perimeter()<<std::endl;
+
+    delete &figures;
+    delete minPerimeterFigure;
 }
 
 int main() {

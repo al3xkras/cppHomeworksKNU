@@ -11,3 +11,7 @@ bool Figure::isConvex() {
 double Figure::perimeter() {
     return 0;
 }
+
+std::ostream &operator<<(std::ostream &os, const Figure &figure) {
+    return os;
+}
