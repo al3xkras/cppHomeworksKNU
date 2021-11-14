@@ -1,9 +1,9 @@
 #include <iostream>
 
-#include "src/main/Point.h"
-#include "src/main/Figure.h"
-#include "src/main/Rectangle.h"
-#include "src/main/Triangle.h"
+#include "src/main/FigureComponents/Point.h"
+#include "src/main/FigureComponents/Figure.h"
+#include "src/main/Figures/Rectangle.h"
+#include "src/main/Figures/Triangle.h"
 
 void task16_08(){
     Rectangle rectangle(Point(0, -1),

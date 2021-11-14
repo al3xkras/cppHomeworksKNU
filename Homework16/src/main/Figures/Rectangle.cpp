@@ -1,7 +1,7 @@
 //
 // Created by Alex on 14.11.2021.
 //
-#include "Point.h"
+#include "../FigureComponents/Point.h"
 #include "Rectangle.h"
 #include "iostream"
 

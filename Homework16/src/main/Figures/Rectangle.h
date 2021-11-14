@@ -5,8 +5,8 @@
 #ifndef HOMEWORK16_RECTANGLE_H
 #define HOMEWORK16_RECTANGLE_H
 
-#include "Point.h"
-#include "Figure.h"
+#include "../FigureComponents/Point.h"
+#include "../FigureComponents/Figure.h"
 #include "iostream"
 
 struct RectangleEdgesLength{

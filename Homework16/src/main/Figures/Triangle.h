@@ -6,8 +6,8 @@
 #define HOMEWORK16_TRIANGLE_H
 
 #include <ostream>
-#include "Point.h"
-#include "Figure.h"
+#include "../FigureComponents/Point.h"
+#include "../FigureComponents/Figure.h"
 
 struct TriangleEdgesLength{
 private:
