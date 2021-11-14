@@ -15,8 +15,9 @@ private:
     Point* points;
 public:
     Polygon(Point* points, size_t points_size);
-
     bool isConvex();
+
+    virtual ~Polygon();
 };
 
 

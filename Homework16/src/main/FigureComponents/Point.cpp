@@ -23,6 +23,12 @@ void Point::setY(double Y) {
     Point::y = Y;
 }
 
+double Point::dotWith(Point other) {
+    double dot = getX()*other.getX()+
+            getY()*other.getY();
+    return dot;
+}
+
 double Point::distanceTo(Point other) {
     double dist = sqrt(
             pow(getX()-other.getX(),2)+

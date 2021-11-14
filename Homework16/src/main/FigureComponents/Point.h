@@ -15,6 +15,7 @@ private:
 public:
     Point(double x, double y);
 
+    double dotWith(Point other);
     double distanceTo(Point other);
 
     double getX() const;
