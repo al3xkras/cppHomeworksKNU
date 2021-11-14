@@ -1,10 +1,13 @@
 #include <iostream>
 
+#include "src/main/Point.h"
 #include "src/main/Figure.h"
 #include "src/main/Rectangle.h"
 
 void task16_08(){
-    Rectangle rectangle(0, -1, 2, 1);
+    Rectangle rectangle(
+            Point(0, -1),
+            Point(2, 1));
 
     std::cout<<rectangle.perimeter()<<std::endl
         <<rectangle.area()<<std::endl

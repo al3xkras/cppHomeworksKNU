@@ -1,15 +1,15 @@
 //
 // Created by Alex on 14.11.2021.
 //
-
+#include "Point.h"
 #include "Rectangle.h"
 #include "iostream"
 
-Rectangle::Rectangle(double x1, double y1, double x2, double y2){
-    this->x1=x1;
-    this->y1=y1;
-    this->x2=x2;
-    this->y2=y2;
+Rectangle::Rectangle(Point leftBottom, Point rightTop){
+    this->x1=leftBottom.getX();
+    this->y1=leftBottom.getY();
+    this->x2=rightTop.getX();
+    this->y2=rightTop.getY();
 }
 
 EdgesLength Rectangle::getEdgesLength() const{
@@ -29,5 +29,9 @@ double Rectangle::perimeter() const{
     EdgesLength edgesLength = getEdgesLength();
 
     return 2*(edgesLength.getShortEdge()+edgesLength.getLongEdge());
+}
+
+Rectangle::~Rectangle() {
+    delete(this);
 }
 

@@ -5,6 +5,7 @@
 #ifndef HOMEWORK16_RECTANGLE_H
 #define HOMEWORK16_RECTANGLE_H
 
+#include "Point.h"
 #include "Figure.h"
 #include "iostream"
 
@@ -38,13 +39,12 @@ private:
            x2,y2;
 
 public:
-    Rectangle(double x1, double y1, double x2, double y2);
+    Rectangle(Point leftBottom, Point rightTop);
 
     EdgesLength getEdgesLength() const;
-
     double area() const;
-
     double perimeter() const;
+    virtual ~Rectangle();
 };
 
 
