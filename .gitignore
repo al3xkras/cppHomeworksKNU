@@ -4,4 +4,6 @@
 *.exe
 *.bin
 *.dat
-*.txt
+
+/Homework12/*.txt
+/Homework14/*.txt
