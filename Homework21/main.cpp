@@ -161,8 +161,40 @@ void task21_14(){
     }
 }
 
-void task21_16(){
+template<typename _InputIterator,typename _OutputIterator,
+        typename _UnaryOperation, typename _Predicate>
+_OutputIterator
+transform_if(_InputIterator _first, _InputIterator _last,_OutputIterator _result,
+                    _UnaryOperation _unary_op, _Predicate _predicate){
 
+    __glibcxx_function_requires(_InputIteratorConcept<_InputIterator>)
+    __glibcxx_function_requires(_OutputIteratorConcept<_OutputIterator,
+            // "the type returned by a _UnaryOperation"
+            __typeof__(__unary_op(*__first))>)
+    __glibcxx_requires_valid_range(__first, __last)
+
+    for (; _first != _last; ++_first, (void)++_result) {
+
+        if (_predicate(*_first)) {
+            *_result = _unary_op(*_first);
+        }
+    }
+
+    return _result;
+}
+
+
+void task21_16(){
+    std::string s = "aaaAbacdefGH^7";
+
+    std::cout<<"String before conditional transform: \n    \""<<s<<'"'<<std::endl;
+
+
+    transform_if(s.begin(),s.end(),s.begin(),
+                 [](char s){return s+1;},
+                 [](char s){return s!='a';});
+
+    std::cout<<"String after conditional transform (char->char+1, if not equal to 'a'):\n    \""<<s<<'"'<<std::endl;
 }
 
 int main() {
@@ -173,9 +205,13 @@ int main() {
      * 21.16
      */
 
-    //task21_05("1234_abcdefghIJKLMnoP_][]'';");
+    std::cout<<std::endl<<std::endl<<std::endl<<"Task 21.05"<<std::endl;
+    task21_05("1234_abcdefghIJKLMnoP_][]'';");
 
+    std::cout<<std::endl<<std::endl<<std::endl<<"Task 21.14"<<std::endl;
     task21_14();
 
+    std::cout<<std::endl<<std::endl<<std::endl<<"Task 21.16"<<std::endl;
+    task21_16();
     return 0;
 }
