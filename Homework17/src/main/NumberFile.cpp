@@ -133,7 +133,7 @@ double NumberFile::getByIndex(int index) {
         }
     }
 
-    throw std::exception();
+    throw std::runtime_error("Element not found");
 }
 
 void NumberFile::appendLine(const std::vector<double>& line) {

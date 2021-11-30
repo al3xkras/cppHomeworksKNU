@@ -6,7 +6,7 @@ void task18_03(){
     BlackBox<int> blackBox(ints);
     blackBox.push(38);
 
-    for (int i=0; i<ints.size()+1; i++){
+    for (int i=0; i<ints.size(); i++){ //Expected: out of range
         std::cout<<blackBox.pop()<<' '<<blackBox.xpop()<<std::endl;
     }
 }

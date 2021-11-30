@@ -125,7 +125,6 @@ void task21_14(){
 
     assert(f2.is_open());
 
-
     std::stringstream buffer;
     buffer << f2.rdbuf();
     std::string data = buffer.str();

@@ -40,6 +40,8 @@ void task20_15(const std::string &NameT, const std::string &NameS){
 
     assert(f.is_open());
     for (char c; f.get(c);){
+        if (c<'a' || c>'z') continue;
+
         if (m.count(c)){
             m[c]++;
             continue;
@@ -70,7 +72,7 @@ int main() {
 
     //task20_15
     std::ofstream f("characters.txt",std::ios_base::trunc | std::ios_base::out);
-    f<<"aaaaabbcDDeFbBdaabbCcZZZehzzz";
+    f<<"aaaaabbcDDeFbBdaabbCcZZZehzzz_____12345";
     f.close();
 
     std::cout<<std::endl<<std::endl<<"Task 20.15"<<std::endl;
